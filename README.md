@@ -83,7 +83,7 @@ orangehrm-qa-automation
 Clone the repository:
 
 ```bash
-git clone https://github.com/TON-USERNAME/orangehrm-qa-automation.git
+git clone https://github.com/Ashawir/orangehrm-qa-automation.git
 ```
 
 Install dependencies:
@@ -127,11 +127,9 @@ Current test suite:
 
 ## HTML Report
 
-## HTML Report
+The project generates a Playwright HTML report after each test execution.
 
-The project generates a Playwright HTML report after each execution.
-
-Example report:
+Screenshot of the generated report:
 
 ![Playwright Report](images/playwright-report.png)
 ---
