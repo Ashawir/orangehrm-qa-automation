@@ -101,13 +101,23 @@ npx playwright install
 Run all tests:
 
 ```bash
-npx playwright test
+npm test
 ```
 
 Open the HTML report:
 
 ```bash
 npx playwright show-report
+```
+
+---
+
+### Run smoke tests only
+
+Critical tests are tagged with `@smoke`. To run only these:
+
+```bash
+npm run test:smoke
 ```
 
 ---

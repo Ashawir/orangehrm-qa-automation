@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test')
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com'
 
-test('API - Récupérer un utilisateur existant', async ({ request }) => {
+test('API - Récupérer un utilisateur existant @smoke', async ({ request }) => {
     const response = await request.get(`${BASE_URL}/users/1`)
 
     expect(response.status()).toBe(200)

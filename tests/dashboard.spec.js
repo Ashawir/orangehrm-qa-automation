@@ -8,7 +8,7 @@ test.beforeEach('login avec identifiants valides', async({ page }) => {
     await loginPage.login('Admin', 'admin123')
 })
 
-test('Titre visible après login', async({ page }) =>{
+test('Titre visible après login @smoke', async({ page }) =>{
     const dashboardPage = new DashboardPage(page)
     const title = dashboardPage.getTitle()
     await expect(title).toBeVisible()
