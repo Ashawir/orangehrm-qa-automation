@@ -4,7 +4,7 @@ const LoginPage = require('./pages/LoginPage')
 test('Login avec identifiants valides @smoke', async({ page }) => {
     const loginPage = new LoginPage(page)
     await loginPage.goto()
-    await loginPage.login('Admin', 'admin123')
+    await loginPage.login(process.env.ORANGEHRM_USERNAME, process.env.ORANGEHRM_PASSWORD)
 
     await expect(page).toHaveURL(/dashboard/)
     await expect(page.getByRole('heading', { name: 'Dashboard' })).toBeVisible()
@@ -14,7 +14,7 @@ test('Login avec mot de passe incorrect', async({ page }) => {
     const loginPage = new LoginPage(page)
 
     await loginPage.goto()
-    await loginPage.login('Admin', 'fauxmotdepasse')
+    await loginPage.login('process.env.ORANGEHRM_USERNAME', 'fauxmotdepasse')
 
     await expect(page).toHaveURL(/login/)
 

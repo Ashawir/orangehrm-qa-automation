@@ -98,6 +98,13 @@ Install Playwright browsers:
 npx playwright install
 ```
 
+Create a .env file at the project root using .env.example and configure your credentials:
+
+```bash
+ORANGEHRM_USERNAME=your_username
+ORANGEHRM_PASSWORD=your_password
+```
+
 Run all tests:
 
 ```bash
@@ -125,6 +132,8 @@ npm run test:smoke
 ## Continuous Integration
 
 This project uses GitHub Actions to automatically execute all Playwright tests on every push to the repository.
+
+Credentials are managed using GitHub Secrets.
 
 Current test suite:
 
