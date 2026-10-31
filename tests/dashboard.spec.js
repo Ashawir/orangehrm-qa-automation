@@ -1,14 +1,11 @@
 const { test, expect } = require('@playwright/test')
-const LoginPage = require('./pages/LoginPage')
 const DashboardPage = require('./pages/DashboardPage')
 
-test.beforeEach('login avec identifiants valides', async({ page }) => {
-    const loginPage = new LoginPage(page)
-    await loginPage.goto()
-    await loginPage.login('Admin', 'admin123')
+test.beforeEach(async ({ page }) => {
+    await page.goto('/web/index.php/dashboard/index')
 })
 
-test('Titre visible après login @smoke', async({ page }) =>{
+test('Titre visible sur le dashboard @smoke', async({ page }) =>{
     const dashboardPage = new DashboardPage(page)
     const title = dashboardPage.getTitle()
     await expect(title).toBeVisible()
