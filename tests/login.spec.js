@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test')
 const LoginPage = require('./pages/LoginPage')
 
-test('Login avec identifiants valides', async({ page }) => {
+test('Login avec identifiants valides @smoke', async({ page }) => {
     const loginPage = new LoginPage(page)
     await loginPage.goto()
     await loginPage.login('Admin', 'admin123')
