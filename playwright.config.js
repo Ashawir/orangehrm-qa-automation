@@ -11,5 +11,21 @@ module.exports = defineConfig({
         video: 'retain-on-failure',
         trace: 'on-first-retry'
     },
-    reporter: 'html'
+    reporter: 'html',
+    projects: [
+        {
+            name: 'setup',
+            testMatch: /auth\.setup\.js/
+        },
+        {
+            name: 'authenticated',
+            testMatch: /dashboard\.spec\.js/,
+            use: { storageState: 'playwright/.auth/user.json' },
+            dependencies: ['setup']
+        },
+        {
+            name: 'public',
+            testIgnore: [/auth\.setup\.js/, /dashboard\.spec\.js/]
+        }
+    ]
 })
